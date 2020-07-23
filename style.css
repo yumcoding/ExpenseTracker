@@ -72,6 +72,7 @@ input:focus {
   width: 300px;
   padding: 10px;
   box-shadow: var(--box-shadow);
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
 }
@@ -128,6 +129,7 @@ input:focus {
   position: relative;
   width: 100%;
   padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .in-list li {
@@ -139,7 +141,7 @@ input:focus {
 }
 .btn.delete-btn {
   position: absolute;
-  left: -12%;
+  left: -14%;
   top: 5px;
   opacity: 0;
   background-color: var(--money-minus);
@@ -150,4 +152,33 @@ input:focus {
 .in-list li:hover .btn.delete-btn,
 .ex-list li:hover .btn.delete-btn {
   opacity: 1;
+}
+
+/* add new transaction */
+.add-form h3 {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+.form-group label {
+  display: block;
+  margin: 5px 0;
+}
+
+.form-group input {
+  padding: 5px 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.btn.add-btn {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #9c88ff;
+  color: #fff;
 }
