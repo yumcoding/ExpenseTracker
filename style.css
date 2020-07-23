@@ -137,6 +137,7 @@ input:focus {
   position: relative;
   width: 100%;
   padding: 5px 20px;
+  margin-bottom: 7px;
   border-radius: 4px;
 }
 
