@@ -57,6 +57,30 @@ function showBalance() {
   expense.innerHTML = `-$ ${totalExpense}`;
 }
 
+// add Transaction
+function addTransaction(e) {
+  e.preventDefault();
+
+  if (text.value === "" || amount.value === "") {
+    alert("Please enter text and amount");
+  } else {
+    const newTransaction = {
+      id: generateID(),
+      text: text.value,
+      amount: +amount.value,
+    };
+    transactions.push(newTransaction);
+    addTransactionDOM(newTransaction);
+    showBalance();
+
+    text.value = "";
+    amount.value = "";
+  }
+}
+//generate ID
+function generateID() {
+  return Math.floor(Math.random() * 1000000);
+}
 // initialize
 
 function init() {
@@ -66,3 +90,5 @@ function init() {
 }
 
 init();
+
+form.addEventListener("submit", addTransaction);
