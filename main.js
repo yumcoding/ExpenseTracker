@@ -18,32 +18,51 @@ const dummyTransactions = [
 let transactions = dummyTransactions;
 
 // add transactions to DOM
-function addTransactionDOM() {
-  transactions.forEach((item) => {
-    if (item.amount > 0) {
-      const li = document.createElement("li");
-      li.className = "money plus";
-      li.innerHTML = `
-            <span>${item.text}</span>
-            <span class="money plus">$ ${item.amount}</span>
-            `;
-      moneyPlus.appendChild(li);
-    } else {
-      const li = document.createElement("li");
-      li.className = "money minus";
-      li.innerHTML = `
-              <span>${item.text}</span>
-              <span class="money minus">$ ${item.amount}</span>
+function addTransactionDOM(transaction) {
+  if (transaction.amount > 0) {
+    const li = document.createElement("li");
+    li.className = "money plus";
+    li.innerHTML = `
+              <span>${transaction.text}</span>
+              <span class="money plus"> ${transaction.amount.toFixed(2)}</span>
               `;
-      moneyMinus.appendChild(li);
-    }
-  });
+    moneyPlus.appendChild(li);
+  } else {
+    const li = document.createElement("li");
+    li.className = "money minus";
+    li.innerHTML = `
+                <span>${transaction.text}</span>
+                <span class="money minus"> ${transaction.amount.toFixed(
+                  2
+                )}</span>
+                `;
+    moneyMinus.appendChild(li);
+  }
+}
+
+function showBalance() {
+  const amountArr = transactions.map((item) => item.amount);
+  const totalIncome = amountArr
+    .filter((item) => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
+  const totalExpense = Math.abs(
+    amountArr.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0)
+  ).toFixed(2);
+
+  const total = amountArr.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+  balance.innerHTML = `$ ${total}`;
+  income.innerHTML = `+$ ${totalIncome}`;
+  expense.innerHTML = `-$ ${totalExpense}`;
 }
 
 // initialize
 
 function init() {
-  addTransactionDOM();
+  transactions.forEach(addTransactionDOM);
+
+  showBalance();
 }
 
 init();
