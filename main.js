@@ -8,14 +8,21 @@ const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 const addBtn = document.getElementById("addBtn");
 
-const dummyTransactions = [
-  { id: 1, text: "Flower", amount: -20 },
-  { id: 2, text: "Salary", amount: 300 },
-  { id: 3, text: "Book", amount: -10 },
-  { id: 4, text: "Camera", amount: 150 },
-];
+// const dummyTransactions = [
+//   { id: 1, text: "Flower", amount: -20 },
+//   { id: 2, text: "Salary", amount: 300 },
+//   { id: 3, text: "Book", amount: -10 },
+//   { id: 4, text: "Camera", amount: 150 },
+// ];
 
-let transactions = dummyTransactions;
+const transactionsInLS = JSON.parse(localStorage.getItem("transactions"));
+
+let transactions = transactionsInLS !== null ? transactionsInLS : [];
+
+// set transactions in local storage
+function setTransactionsInLS() {
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+}
 
 // add transactions to DOM
 function addTransactionDOM(transaction) {
@@ -72,11 +79,13 @@ function addTransaction(e) {
     transactions.push(newTransaction);
     addTransactionDOM(newTransaction);
     showBalance();
+    setTransactionsInLS();
 
     text.value = "";
     amount.value = "";
   }
 }
+
 //generate ID
 function generateID() {
   return Math.floor(Math.random() * 1000000);
