@@ -139,9 +139,15 @@ input:focus {
 }
 .btn.delete-btn {
   position: absolute;
-  left: -10px;
+  left: -12%;
   top: 5px;
+  opacity: 0;
   background-color: var(--money-minus);
   color: #fff;
   padding: 3px;
+  transition: opacity 0.3s ease;
+}
+.in-list li:hover .btn.delete-btn,
+.ex-list li:hover .btn.delete-btn {
+  opacity: 1;
 }
