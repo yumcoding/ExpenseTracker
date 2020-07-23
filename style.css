@@ -27,6 +27,11 @@ body {
   align-items: center;
 }
 
+.container i {
+  color: #ff9595;
+  margin-right: 5px;
+}
+
 h1,
 h2,
 h3 {
