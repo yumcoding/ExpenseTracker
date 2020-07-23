@@ -16,13 +16,6 @@
 body {
   font-family: "Lato", sans-serif;
   background-color: #f7f7f7;
-  display: flex;
-  justify-content: center;
-}
-
-/* Container */
-.container {
-  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -30,7 +23,15 @@ body {
   align-items: center;
 }
 
-.container i {
+/* Container */
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+i {
   color: #ff9595;
   margin-right: 5px;
 }
@@ -108,7 +109,6 @@ input:focus {
   width: 100%;
   flex: 1;
   margin: 0 10px;
-  padding: 0 30px;
 }
 
 .in-ex-list > div h3 {
