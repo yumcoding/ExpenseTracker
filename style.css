@@ -41,6 +41,19 @@ h3 {
   margin: 10px 0;
 }
 
+/* button */
+
+.btn,
+input {
+  cursor: pointer;
+  border: 0;
+}
+
+.btn:focus,
+input:focus {
+  outline: 0;
+}
+
 /* balnace container */
 .balance-container {
   display: flex;
