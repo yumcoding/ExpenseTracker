@@ -17,6 +17,7 @@ const dummyTransactions = [
 
 let transactions = dummyTransactions;
 
+// add transactions to DOM
 function addTransactionDOM() {
   transactions.forEach((item) => {
     if (item.amount > 0) {
@@ -38,6 +39,8 @@ function addTransactionDOM() {
     }
   });
 }
+
+// initialize
 
 function init() {
   addTransactionDOM();
