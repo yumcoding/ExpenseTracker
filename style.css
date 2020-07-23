@@ -4,6 +4,7 @@
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --money-plus: #2ecc71;
   --money-minus: #c0392b;
+  --border-color: #dedede;
 }
 
 * {
@@ -22,7 +23,7 @@ body {
 /* Container */
 .container {
   padding: 20px;
-  width: 500px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +70,7 @@ h3 {
 }
 
 .income-container {
-  border-right: 1px solid #dedede;
+  border-right: 1px solid var(--border-color);
 }
 
 .income-container .income {
@@ -80,4 +81,32 @@ h3 {
 .expense-container .expense {
   color: var(--money-minus);
   font-size: 16px;
+}
+
+/* income and expense list */
+.in-ex-list {
+  margin: 20px 0;
+  display: flex;
+}
+
+.in-ex-list > div {
+  width: 100%;
+  flex: 1;
+  margin: 0 10px;
+  padding: 0 30px;
+}
+
+.in-ex-list > div h3 {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.in-list,
+.ex-list {
+  list-style: none;
+}
+
+.in-list li,
+.ex-list li {
+  width: 100%;
+  padding: 5px;
 }
