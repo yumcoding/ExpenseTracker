@@ -99,6 +99,7 @@ input:focus {
 /* income and expense list */
 .in-ex-list {
   margin: 20px 0;
+  width: 100%;
   display: flex;
 }
 
@@ -120,6 +121,27 @@ input:focus {
 
 .in-list li,
 .ex-list li {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
   width: 100%;
-  padding: 5px;
+  padding: 5px 10px;
+}
+
+.in-list li {
+  border-right: 3px solid var(--money-plus);
+}
+
+.ex-list li {
+  border-right: 3px solid var(--money-minus);
+}
+.btn.delete-btn {
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  background-color: var(--money-minus);
+  color: #fff;
+  padding: 3px;
 }
