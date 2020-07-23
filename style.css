@@ -31,6 +31,14 @@ body {
   justify-content: space-around;
 }
 
+.container .section-left {
+  flex: 2;
+}
+
+.container .section-right {
+  flex: 1;
+}
+
 i {
   color: #ff9595;
   margin-right: 5px;
@@ -147,7 +155,7 @@ input:focus {
 }
 .btn.delete-btn {
   position: absolute;
-  left: -14%;
+  left: -15px;
   top: 5px;
   opacity: 0;
   background-color: var(--money-minus);
