@@ -7,7 +7,9 @@ const form = document.querySelector("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 const addBtn = document.getElementById("addBtn");
-
+const modalBtn = document.getElementById("show-modal");
+const modalContainer = document.getElementById("modal-container");
+const modalCloseBtn = document.getElementById("close");
 // const dummyTransactions = [
 //   { id: 1, text: "Flower", amount: -20 },
 //   { id: 2, text: "Salary", amount: 300 },
@@ -117,3 +119,14 @@ function init() {
 init();
 
 form.addEventListener("submit", addTransaction);
+modalBtn.addEventListener("click", () => {
+  modalContainer.style.display = "flex";
+});
+modalCloseBtn.addEventListener("click", () => {
+  modalContainer.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal-container")) {
+    modalContainer.style.display = "none";
+  }
+});
