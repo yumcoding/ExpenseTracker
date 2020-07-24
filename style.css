@@ -161,7 +161,7 @@ input:focus {
   opacity: 0;
   background-color: var(--money-minus);
   color: #fff;
-  padding: 3px;
+  padding: 2px;
   transition: opacity 0.3s ease;
 }
 .in-list li:hover .btn.delete-btn,
