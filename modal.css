@@ -111,14 +111,14 @@ input:focus {
   margin: 20px 0;
   width: 100%;
 
-  display: flex;
+  /* display: flex; */
 }
 
-.in-ex-list > div {
+/* .in-ex-list > div {
   width: 100%;
   flex: 1;
   margin: 0 10px;
-}
+} */
 
 .in-ex-list > div h3 {
   border-bottom: 1px solid var(--border-color);
@@ -172,20 +172,52 @@ input:focus {
 
 /* add new transaction */
 
+.section-right {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.add-form {
+  background: #fff;
+  width: 400px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-form .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
 .add-form h3 {
   border-bottom: 1px solid var(--border-color);
+  margin: 10px 0 25px;
+  font-size: 18px;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
+
 .form-group label {
   display: block;
-  margin: 5px 0;
+  margin: 10px 0;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .form-group input {
-  padding: 5px 10px;
+  padding: 7px 10px;
   width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -195,7 +227,9 @@ input:focus {
 .btn.add-btn {
   width: 100%;
   padding: 7px 10px;
+  margin-top: 5px;
   border-radius: 4px;
   background-color: #9c88ff;
   color: #fff;
+  font-size: 15px;
 }
