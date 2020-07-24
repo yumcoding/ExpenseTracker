@@ -28,15 +28,8 @@ body {
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
-}
-
-.container .section-left {
-  flex: 2;
-}
-
-.container .section-right {
-  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 i {
@@ -106,12 +99,25 @@ input:focus {
   font-size: 16px;
 }
 
+/* show modal btn */
+.show-modal,
+.btn.add-btn {
+  width: 100%;
+  padding: 7px 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  background-color: #9c88ff;
+  color: #fff;
+  font-size: 15px;
+}
+
+.show-modal {
+  margin-top: 10px;
+}
 /* income and expense list */
 .in-ex-list {
   margin: 20px 0;
   width: 100%;
-
-  /* display: flex; */
 }
 
 /* .in-ex-list > div {
@@ -179,6 +185,7 @@ input:focus {
   left: 0;
   right: 0;
   bottom: 0;
+  display: none;
 }
 .add-form {
   background: #fff;
@@ -221,15 +228,5 @@ input:focus {
   width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  font-size: 15px;
-}
-
-.btn.add-btn {
-  width: 100%;
-  padding: 7px 10px;
-  margin-top: 5px;
-  border-radius: 4px;
-  background-color: #9c88ff;
-  color: #fff;
   font-size: 15px;
 }
