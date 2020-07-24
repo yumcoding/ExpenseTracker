@@ -76,6 +76,8 @@ function showBalance() {
 function addTransaction(e) {
   e.preventDefault();
 
+  modalContainer.style.display = "none";
+
   if (text.value === "" || amount.value === "") {
     alert("Please enter text and amount");
   } else {
