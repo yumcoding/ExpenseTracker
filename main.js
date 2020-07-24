@@ -32,7 +32,9 @@ function addTransactionDOM(transaction) {
     li.innerHTML = `
               <span>${transaction.text}</span>
               <span class="money plus"> ${transaction.amount.toFixed(2)}</span>
-              <button class="btn delete-btn">X</button>
+              <button class="btn delete-btn" onclick="removeTransaction(${
+                transaction.id
+              })">X</button>
               `;
     moneyPlus.appendChild(li);
   } else {
@@ -43,7 +45,9 @@ function addTransactionDOM(transaction) {
                 <span class="money minus"> ${transaction.amount.toFixed(
                   2
                 )}</span>
-                <button class="btn delete-btn">X</button>
+                <button class="btn delete-btn" onclick="removeTransaction(${
+                  transaction.id
+                })">X</button>
                 `;
     moneyMinus.appendChild(li);
   }
@@ -92,9 +96,19 @@ function addTransaction(e) {
 function generateID() {
   return Math.floor(Math.random() * 1000000);
 }
+
+// Remove Transaction
+function removeTransaction(transactionId) {
+  transactions = transactions.filter((item) => item.id !== transactionId);
+  setTransactionsInLS();
+  init();
+}
+
 // initialize
 
 function init() {
+  moneyPlus.innerHTML = "";
+  moneyMinus.innerHTML = "";
   transactions.forEach(addTransactionDOM);
 
   showBalance();
